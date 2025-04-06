@@ -1,0 +1,25 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+           <interface>
+             <object class="GtkMenu" id="menu">
+               <child>
+		    <object class="GtkMenuItem" id="firefox">
+                          <property name="label">Browser Internet</property>
+                   </object>
+                </child>
+               <child>
+                     <object class="GtkMenuItem" id="thunar">
+                          <property name="label">File Manager</property>
+                     </object>
+               </child>
+               <child>
+                   <object class="GtkMenuItem" id="gdisks">
+                          <property name="label">Disk Management</property>
+                   </object>
+               </child>
+               <child>
+                   <object class="GtkMenuItem" id="foot">
+                          <property name="label">Terminal</property>
+                   </object>
+               </child>
+             </object>
+           </interface>

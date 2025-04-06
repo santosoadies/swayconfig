@@ -1,0 +1,155 @@
+// -*- mode: jsonc -*-
+{
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 27, // Waybar height (to be removed for auto height)
+    //"width": 1280, // Waybar width
+    "spacing": 2, // Gaps between modules (4px)
+
+    "modules-left": [
+    	"custom/icon1",
+        "sway/workspaces"
+    ],
+    "modules-center": [
+    	"custom/icon2",
+        "cpu",
+        "memory",
+        "backlight",
+        "battery",
+	"pulseaudio",
+        "clock"
+    ],
+    "modules-right": [
+        "keyboard-state",
+	"sway/mode",
+        "sway/scratchpad",
+        "tray",
+	"custom/power"
+    ],
+    "sway/workspaces": {
+    	 "smooth-scrolling-threshold": 2,
+     	 "disable-scroll-wraparound": true,
+     	 "persistent-workspaces": {
+     	 	"1": [],
+     	 	"2": [],
+     	 	"3": [],
+     	 	"4": []
+     	 	}
+    },
+    "custom/icon1": {
+  	 "format": "",
+  	 "tooltip": true,
+	 "tooltip-format": "Explore Applications",
+ 	  "on-click": "xfce4-appfinder",
+	 "menu": "on-click-right",
+         "menu-file": "~/.config/waybar/app_menu.xml",
+                     "menu-actions": {
+                          "firefox": "sway exec firefox",
+                          "thunar": "sway exec thunar",
+                          "gdisks": "sway exec gnome-disks",
+                          "foot": "sway exec foot"
+		     }
+    },
+    "custom/icon2": {
+  	 "format": "",
+  	 "tooltip": true,
+	 "tooltip-format": "Enable (click) \nDisable (right-click)\nGammastep",
+ 	  "on-click": "gammastep -O 3600 -g 0.9",
+	  "on-click-right": "pkill gammastep"
+    },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+     "sway/mode": {
+        "format": "{}"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        //"icon-size": 22,
+        "spacing": 10
+    },
+    "clock": {
+        //"timezone": "Asia/Jakarta",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+	"format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% "
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/power": {
+	"format" : "",
+  	 "tooltip": true,
+	 "tooltip-format": "Power Session",
+	"menu": "on-click",
+         "menu-file": "~/.config/waybar/power_menu.xml",
+                     "menu-actions": {
+                          "shutdown": "systemctl -i shutdown",
+                          "reboot": "systemctl -i reboot",
+                          "suspend": "systemctl -i suspend",
+                          "logout": "sway exit"
+                     }
+	}
+}

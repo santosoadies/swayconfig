@@ -33,3 +33,5 @@ Hotkey
   Win + A  - Notification Center,
   ... Read sway/config
 </pre>
+
+OS Devuan, non-systemd plug-&-play

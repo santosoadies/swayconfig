@@ -34,4 +34,4 @@ Hotkey
   ... Read sway/config
 </pre>
 
-OS Devuan, non-systemd plug-&-play
+OS Devuan, Void|Artix, *non-systemd plug-&-play

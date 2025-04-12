@@ -98,15 +98,13 @@ mode "resize" {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym $mod+Print exec grim
 # Wallpaper
-    output * bg /usr/share/backgrounds/Sakamoto.png fill
+    output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Lockscreen
-    bindsym $mod+Shift+l exec swaylock -i /usr/share/backgrounds/Sakamoto.png
+    bindsym $mod+Shift+l exec swaylock -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 # Pengaturan desktop
    workspace_layout tabbed
    for_window [app_id="xfce4-appfinder"] floating enable
    for_window [app_id="blueman-*"] floating enable
-#    for_window [app_id=".*"] floating enable
-#    for_window [app_id=".*"] border pixel 4
 
 include /etc/sway/config.d/*
 

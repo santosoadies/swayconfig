@@ -1,0 +1,211 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Noto Sans;
+    font-size: 12px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background-color: rgba( 0, 0, 0, 0.75);
+    color: #ffffff;
+/*   transition-property: background-color;
+    transition-duration: .5s; */
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* FontAwesome, Roboto, Helvetica, Arial, sans-serif, 
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+#workspaces { 
+    border: 1px solid #ffffff;
+    background-color: #3d3d3d; 
+    border-radius: 0px 8px 0px 0px; 
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* Avoid rounded borders under each button name */
+    border-radius: 0px 8px 0px 0px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background-color: #ffffff;
+}
+
+#workspaces button.focused {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    border: 1px solid #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    border-radius: 8px 0px 0px 0px;
+    margin: 2px 0px;
+    padding: 0px 10px;
+    background-color: #eb4d4b;
+}
+
+#custom-icon1,
+#custom-icon2,
+#custom-icon3,
+#custom-power,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#pulseaudio,
+#wireplumber,
+#tray,
+#scratchpad {
+    border: 1px solid #ffffff;
+    margin: 2px 0px;
+    padding: 0px 10px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+#custom-icon1:hover,
+#custom-icon2:hover,
+#custom-icon3:hover,
+#custom-power:hover,
+#clock:hover,
+#battery:hover, #battery.charging:hover, #battery.plugged:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#wireplumber:hover {
+    background-color: #ffffff;
+    color: #3d3d3d;
+}
+
+#window,
+#workspaces {
+    margin: 2px 0px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    border-radius: 0px 8px 0px 0px; 
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 2px;
+}
+
+#custom-icon2 { border-radius: 8px 0px 0px 0px; } 
+#clock { border-radius: 0px 8px 0px 0px; } 
+#clock:hover {
+    background-color: #ffffff;
+    color: #3d3d3d;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #dddddd;
+    color: #3d3d3d;
+}
+
+#pulseaudio:hover {
+    background-color: #ffffff;
+    color: #3d3d3d;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#tray { 
+    border-radius: 8px 0px 0px 0px; 
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#keyboard-state {
+    margin : 2px 0px;
+    background-color: transparent;
+}
+
+#keyboard-state > label {
+    padding: 0 10px;
+    color: transparent;
+}
+
+#keyboard-state > label.locked {
+    border-radius: 8px 0px 0px 0px;
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #eb4d4b;
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+

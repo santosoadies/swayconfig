@@ -1,0 +1,51 @@
+{
+    "output": {
+        "bass_enhancer#0": {
+            "amount": 3.9999999999999907,
+            "blend": -5.0,
+            "bypass": false,
+            "floor": 35.0,
+            "floor-active": true,
+            "harmonics": 2.000000000000014,
+            "input-gain": 0.0,
+            "output-gain": 0.0,
+            "scope": 240.0
+        },
+        "blocklist": [],
+        "compressor#0": {
+            "attack": 20.0,
+            "boost-amount": 4.000000000000007,
+            "boost-threshold": -72.0,
+            "bypass": false,
+            "dry": -100.0,
+            "hpf-frequency": 10.0,
+            "hpf-mode": "off",
+            "input-gain": 0.0,
+            "knee": -5.999999999999993,
+            "lpf-frequency": 20000.0,
+            "lpf-mode": "off",
+            "makeup": -1.942890293094024e-16,
+            "mode": "Downward",
+            "output-gain": 0.0,
+            "ratio": 4.0,
+            "release": 4000.0,
+            "release-threshold": -100.0,
+            "sidechain": {
+                "lookahead": 20.0,
+                "mode": "Peak",
+                "preamp": -6.999999999999991,
+                "reactivity": 20.0,
+                "source": "Middle",
+                "stereo-split-source": "Left/Right",
+                "type": "Feed-back"
+            },
+            "stereo-split": false,
+            "threshold": -12.0,
+            "wet": -1.0000000000000002
+        },
+        "plugins_order": [
+            "bass_enhancer#0",
+            "compressor#0"
+        ]
+    }
+}

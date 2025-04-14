@@ -23,14 +23,17 @@ recommended deps {
   brightnessctl, -waybar -sway
   blueman, -waybar -sway
   pavucontrol, -waybar -sway
+  grim, -sway
 }
 
-Hotkey 
+Core Hotkey 
   main Win|Super
-  Win + E  - Thunar,
-  Win + D  - Launcher,
   Win + Enter  - Terminal|foot,
-  Win + A  - Notification Center,
+  Win + e  - Thunar,
+  Win + d  - Launcher,
+  Win + a  - Notification Center,
+  Win + x  - Toggle Tabbed (Maximize | Unmaximize)
+  Win + PrintScr - Screenshot by grim ~/Pictures/
   ... Read sway/config
 </pre>
 

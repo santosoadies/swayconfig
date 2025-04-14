@@ -1,16 +1,15 @@
 # Read `man 5 sway` for a complete reference.
 
-# Startup - tiap baris diawali dengan exec
+# Startup
 exec sway hide_edge_borders smart_no_gaps, font pango:Noto Sans bold 9, title_align center, mouse_warping none, titlebar_border_thickness 0
 exec waybar & wireplumber &
 exec swaync & blueman-applet & nm-applet &
 
 set $mod Mod4 		
-set $term foot 		# Ubah foot jika menggunakan terminal lain
+set $term foot 		# Replace foot for custom terminal.
 set $menu xfce4-appfinder
 
-# Menggunakan pengaturan Touchpad (hapus tanda #)
-
+# Active on Touchpad? Delete # / uncomment!
 #   input type:touchpad {
 #       dwt enabled
 #       tap enabled
@@ -87,7 +86,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# Tombol fungsi Keyboard
+# Function Key
     # Volume
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
@@ -97,11 +96,11 @@ mode "resize" {
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     bindsym $mod+Print exec grim
-# Wallpaper
+# Wallpaper    - or check /etc/sway/config.d/
     output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Lockscreen
     bindsym $mod+Shift+l exec swaylock -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-# Pengaturan desktop
+# Desktop settings (layout)
    workspace_layout tabbed
    for_window [app_id="xfce4-appfinder"] floating enable
    for_window [app_id="blueman-*"] floating enable
